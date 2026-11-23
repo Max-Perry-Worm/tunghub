@@ -1,1 +1,109 @@
-hi squeaky
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TungHub -- By Max Fromme</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1 onclick="showPage('home')">▶ Tung<span>Hub</span></h1>
+  <input id="search" placeholder="Search TungHub..." oninput="searchVideos()">
+  <button id="accountButton" onclick="showPage('login')">Sign In</button>
+</header>
+
+<nav>
+  <button onclick="showPage('home')">Home</button>
+  <button onclick="showPage('videos')">Tung Videos</button>
+  <button onclick="showPage('stars')">TungStars</button>
+  <button onclick="showPage('upload')">Upload</button>
+</nav>
+
+<main>
+
+  <section id="home" class="page">
+    <div class="hero">
+      <h2>Welcome to TungHub.</h2>
+      <p>Watch. Create. Become a TungStar.</p>
+      <button onclick="showPage('videos')">Explore Videos</button>
+    </div>
+    <h2>Trending Videos</h2>
+    <div id="homeVideos" class="video-grid"></div>
+  </section>
+
+  <section id="videos" class="page hidden">
+    <h2>Tung Videos</h2>
+    <div id="allVideos" class="video-grid"></div>
+  </section>
+
+  <section id="stars" class="page hidden">
+    <h2>Discover TungStars</h2>
+    <div id="allStars" class="star-grid"></div>
+  </section>
+
+  <section id="channel" class="page hidden">
+    <div id="channelInfo"></div>
+    <h2>Creator Videos</h2>
+    <div id="channelVideos" class="video-grid"></div>
+  </section>
+
+  <section id="upload" class="page hidden">
+    <div class="panel">
+      <h2>Upload a Video</h2>
+      <input id="videoTitle" placeholder="Video title">
+      <textarea id="videoDescription" placeholder="Description"></textarea>
+      <select id="videoType">
+        <option value="video">Tung Video</option>
+        <option value="star">TungStar Channel Video</option>
+      </select>
+      <input type="file" id="videoFile" accept="video/*">
+      <button onclick="uploadVideo()">Upload</button>
+      <p id="uploadStatus"></p>
+    </div>
+  </section>
+
+  <section id="login" class="page hidden">
+    <div class="panel">
+      <h2>Join TungHub</h2>
+      <input id="email" type="email" placeholder="Email">
+      <input id="password" type="password" placeholder="Password">
+      <input id="starName" placeholder="Your TungStar name">
+      <button onclick="register()">Create Account</button>
+      <button onclick="login()">Log In</button>
+      <button onclick="logout()">Log Out</button>
+      <p id="authStatus"></p>
+    </div>
+  </section>
+
+  <section id="watch" class="page hidden">
+    <button onclick="showPage('videos')">← Back</button>
+    <h2 id="watchTitle"></h2>
+
+    <video id="player" controls playsinline></video>
+
+    <p id="watchCreator"></p>
+    <p id="watchDescription"></p>
+
+    <button id="likeButton" onclick="likeVideo()">♥ Like</button>
+
+    <h3>Comments</h3>
+    <div id="comments"></div>
+
+    <div class="comment-box">
+      <input id="commentInput" placeholder="Write a comment...">
+      <button onclick="postComment()">Post</button>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 TungHub. Watch. Create. Tung.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

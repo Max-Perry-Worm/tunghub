@@ -1,0 +1,179 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #101116;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 5%;
+  background: #1a1b23;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header h1 {
+  cursor: pointer;
+}
+
+header span {
+  color: #f04444;
+}
+
+input, textarea, select {
+  background: #292b34;
+  color: white;
+  padding: 13px;
+  border: 1px solid #444650;
+  border-radius: 8px;
+  width: 100%;
+  margin: 6px 0;
+}
+
+header input {
+  max-width: 400px;
+}
+
+button {
+  padding: 11px 17px;
+  border: none;
+  border-radius: 8px;
+  background: #ed343d;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 4px;
+}
+
+button:hover {
+  background: #bd2530;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background: #1a1b23;
+  padding: 15px;
+  flex-wrap: wrap;
+}
+
+nav button {
+  background: #30313b;
+}
+
+main {
+  max-width: 1250px;
+  padding: 25px;
+  margin: auto;
+  min-height: 75vh;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.hero {
+  background: linear-gradient(120deg, #581e3e, #292050, #151722);
+  padding: 55px 35px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+}
+
+.hero h2 {
+  font-size: 38px;
+}
+
+.video-grid, .star-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.video-card, .star-card, .panel {
+  background: #1d1e26;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #30313a;
+}
+
+.video-card video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: black;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.video-card h3 {
+  margin-bottom: 5px;
+}
+
+.panel {
+  max-width: 500px;
+  margin: 30px auto;
+}
+
+#player {
+  width: 100%;
+  max-height: 650px;
+  background: black;
+  border-radius: 12px;
+}
+
+#comments {
+  margin-top: 15px;
+}
+
+.comment {
+  background: #252630;
+  padding: 12px;
+  border-radius: 9px;
+  margin-bottom: 10px;
+}
+
+.comment-box {
+  display: flex;
+  gap: 10px;
+}
+
+.comment-box input {
+  flex: 1;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #1a1b23;
+  color: #999;
+}
+
+@media(max-width: 600px) {
+  header {
+    flex-wrap: wrap;
+  }
+
+  header input {
+    order: 3;
+    max-width: none;
+  }
+
+  main {
+    padding: 14px;
+  }
+
+  .hero h2 {
+    font-size: 28px;
+  }
+}

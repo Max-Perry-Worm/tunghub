@@ -328,7 +328,7 @@ window.watchVideo = async function(id) {
   player.dataset.stage = "intro";
 
   // Play intro first.
-  player.src = "./intro.mp4";
+  player.src = "./IMG_8095.mp4";
   player.load();
 
   try {
